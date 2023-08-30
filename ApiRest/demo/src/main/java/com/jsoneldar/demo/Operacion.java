@@ -7,5 +7,8 @@ public class Operacion{
     public Object getMarcaTarjeta() {
         return null;
     }
+    public double getImporte() {
+        return 0;
+    }
 
 }
