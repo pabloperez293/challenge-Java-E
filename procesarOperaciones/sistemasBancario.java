@@ -7,7 +7,7 @@ public class sistemasBancario {
     public static void main(String[] args){
         double montOper = 800;
         double limitConsum = 1000;
-        LocalDate fechaVencimiento = LocalDate.of(2023, 8, 30);
+        LocalDate fechaVencimiento = LocalDate.of(2023, 8, 31);
 
 
 // Verificamos si la operacion es valida 
@@ -18,5 +18,12 @@ public class sistemasBancario {
         }
 
 // Verificar si la tarjea es valida para operara
+
+        LocalDate fechaActual = LocalDate.now();
+        if( fechaVencimiento.isAfter(fechaActual)){
+            System.out.println("la tarjeta es valida para operar");
+        } else{
+            System.out.println("la tarjeta no es valida para operar");
+        }
     }
 }
