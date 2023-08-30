@@ -6,16 +6,12 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
+@RequestMapping("/operacion")
     public class operControl{
 
-        @PostMapping("/operacion")
-        public double consultarTasa(@RequestBody Operacion operacion, @RequestHeader("Content-Type") String contentType){
-// El requestBody indicamos que se espera un objeto JSON indicamos la tarjeta y el importe
-        if ( !contentType.equals("application/json")){
-            throw new IllegalArgumentException("El encabezado contentType debe ser json");
-        }
-
-        return 0.05;
-
+        @PostMapping("/consulTasa")
+            public Operacion consultarTasa(@RequestBody Operacion operacion) {
+    // El requestBody indicamos que se espera un objeto JSON indicamos la tarjeta y el importe        
+            return operacion;
     }
 }
