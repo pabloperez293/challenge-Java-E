@@ -1,21 +1,31 @@
 package procesarOperaciones;
 
+// punto 1 de mostrar info
 public class tarjetaCred {
     
-    private String entidadBancaria;
-    private String numeros;    
-    private double saldo;
-    private String marca;
-    private String fechaVencimiento;
     private String PAN;
+    private String titular;
+    private String fechaVencimiento;
+    private double saldo;
+    
 
-    public tarjetaCred(String entidadBancaria, String numeros, double saldo , String marca, String fechaVencimiento, String PAN){
-        this.entidadBancaria = entidadBancaria;
-        this.numeros = numeros;
+    public tarjetaCred(String PAN, String titular, String fechaVencimiento, double saldo ){
+        this.titular = titular;
         this.saldo = saldo;
-        this.marca = marca;
         this.fechaVencimiento = fechaVencimiento;
         this.PAN = PAN;
-    }    
+    }  
+    
+    // Para obtener la informacion de la tarjet
+    public String obtenerInfoTarjeta() {
+        return "Numero de tarjeta: " + PAN + " nombre: " + titular + " Fecha de vencimiento " +  fechaVencimiento + " saldo "+ saldo;
+    }
+
+    // Probar si esta bien el metodo
+    // public static void main(String[] args){
+    //     tarjetaCred mitarjeta = new tarjetaCred("123123123123", "PAblo", "06/05", 1000);
+    //     String info = mitarjeta.obtenerInfoTarjeta();
+    //     System.out.println(info);
+    // } funciona (Y)
     
 }
