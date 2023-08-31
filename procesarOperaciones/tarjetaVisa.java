@@ -13,7 +13,9 @@ public class tarjetaVisa extends tarjeta {
         // Trabajamos con la clase del hijo
         public double obtenerTasa(LocalDate fecha ){
 
-            return fecha.getYear() / fecha.getMonthValue();
+            int anioFull = fecha.getYear();            
+
+            return (anioFull % 100)  / fecha.getMonthValue();
 
         }
 }

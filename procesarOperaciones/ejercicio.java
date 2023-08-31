@@ -50,8 +50,20 @@ public class ejercicio {
         tarjetaNara tarjeta5 = new tarjetaNara( "5895 9798 1158 1149", fecha , "Franco perez");  
         System.out.println(tarjeta5.toString());
 
+        System.out.println("----------------------------");
+
+        // test 7 : sobre escrituras de metodos
+
         LocalDate fechaActual  =  LocalDate.now();
 
+        System.out.println("Tasa de tarjeta visa "+Double.toString(tarjeta3.obtenerTasa(fechaActual))+ " % ");
+        System.out.println("Tasa de tarjeta Amex "+Double.toString(tarjeta4.obtenerTasa(fechaActual))+ " % ");
+        System.out.println("Tasa de tarjeta Nara "+Double.toString(tarjeta5.obtenerTasa(fechaActual))+ " % ");
+
+        System.out.println("----------------------------");
+
+
+        // Test 8 :Nara , Visa y Amex (son clases hijas). En caso de querer extender el sistema se heredaran nuevas clases con la marca de tarjeta correspondiente
 
     
     }
