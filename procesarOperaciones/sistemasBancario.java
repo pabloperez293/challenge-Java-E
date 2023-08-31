@@ -5,7 +5,7 @@ import java.time.LocalDate;
 public class sistemasBancario {
     // Validaciones 
       
-    public void efectuarPago(LocalDate FechaVencimiento , String PAN , double monto ) {
+    public void efectuarPago( tarjeta tarjeta6 , double monto ) {
 
         // Valida para operar            
             double limitConsum = 1000;
@@ -22,7 +22,7 @@ public class sistemasBancario {
     // Verificar si la tarjeTa es valida para operara
 
             LocalDate fechaActual = LocalDate.now();
-            if( FechaVencimiento.isAfter(fechaActual)){
+            if( tarjeta6.getFechaVencimiento().isAfter(fechaActual)){
                 System.out.println("la tarjeta es valida para operar");
             } else{
                 // Colocar una excepcion trycatch

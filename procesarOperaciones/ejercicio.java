@@ -4,7 +4,9 @@ import java.time.LocalDate;
 
 public class ejercicio {
 
-    public static void main(String[] args){
+    public static void main(String[] args){       
+
+
         // Crear objeto en sistema bancario
         sistemasBancario  miSistema =  new sistemasBancario();       
         System.out.println("----------------------------");
@@ -12,12 +14,15 @@ public class ejercicio {
 
         // Sistemas bancarios
         LocalDate fecha  =  LocalDate.of(2023, 9, 23);
+
+        tarjetaVisa tarjeta6 = new tarjetaVisa( "4428 1654 6549 2135", fecha , "Hector perez");   
+
         // test 1: Efectuo pago < 1000
-        miSistema.efectuarPago(fecha , "1321312321654", 800);
+        miSistema.efectuarPago(tarjeta6, 800);
         System.out.println("----------------------------");
 
         // test 2: Efectuo pago > 1000
-        miSistema.efectuarPago(fecha , "1321312321654", 1500);
+        miSistema.efectuarPago(tarjeta6, 1500);
         System.out.println("----------------------------");
 
         // test 3: creacion de tarjetas y impresion de datos
@@ -64,6 +69,7 @@ public class ejercicio {
 
 
         // Test 8 :Nara , Visa y Amex (son clases hijas). En caso de querer extender el sistema se heredaran nuevas clases con la marca de tarjeta correspondiente
+
 
     
     }
