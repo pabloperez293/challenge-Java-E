@@ -37,13 +37,20 @@ public class ejercicio {
         // test 5: Equal de tarjetas con tarjetas diferentes
         System.out.println("Comparacion de tarjeta 2 y tarjeta 2 : " + tarjeta2.equals(tarjeta2) );
 
+        System.out.println("----------------------------");
+
         // test 6: constructores de la tarjeta hijos "visa, nara , amex"
 
-        tarjetaVisa tarjeta3 = new tarjetaVisa( "4408 7284 1149 1158", fecha , "Diego perez");      
+        tarjetaVisa tarjeta3 = new tarjetaVisa( "4408 7284 1149 1158", fecha , "Diego perez");   
+        System.out.println(tarjeta3.toString());
         
         tarjetaAmex tarjeta4 = new tarjetaAmex( "3421 9798 2125 321", fecha , "Roberto perez");  
+        System.out.println(tarjeta4.toString());
 
-        tarjetaNara tarjeta5 = new tarjetaNara( "98751321335", fecha , "Franco perez");  
+        tarjetaNara tarjeta5 = new tarjetaNara( "5895 9798 1158 1149", fecha , "Franco perez");  
+        System.out.println(tarjeta5.toString());
+
+        LocalDate fechaActual  =  LocalDate.now();
 
 
     
