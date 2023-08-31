@@ -55,11 +55,8 @@ public class tarjetaCred {
 
 
         if (cond1 && cond2 && cond3 && cond4) {     
-            System.out.println("funciona");
             return true;
-
         }else{
-            System.out.println("no funciona");
             return false;
         }
     }
@@ -70,5 +67,5 @@ public class tarjetaCred {
             // return por String todos los datos de la tarjeta
             return "Numero de tarjeta: " + PAN + " nombre: " + cardholder + " Fecha de vencimiento " +  fechaVencimiento + " marca "+ marca;
         }   
-            
+
 }
