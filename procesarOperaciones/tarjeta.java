@@ -4,15 +4,16 @@ import java.time.LocalDate;
 
 // puntos informes, validaciones e indentificar
 
-public class tarjetaCred {
+public class tarjeta {
     
+    // attrib
     private String marca;
     private String PAN;
     private String cardholder;
     private LocalDate fechaVencimiento;
 
 
-    public tarjetaCred(String marca, String PAN, LocalDate fechaVencimiento, String cardholder ){
+    public tarjeta(String marca, String PAN, LocalDate fechaVencimiento, String cardholder ){
         // Constructor
         this.marca = marca;
         this.PAN = PAN;
@@ -45,7 +46,7 @@ public class tarjetaCred {
         boolean cond4 = false;
 
 
-         tarjetaCred tarjeta = (tarjetaCred) o;
+         tarjeta tarjeta = (tarjeta) o;
 
         //  comparando
          cond1 = this.cardholder.equals(tarjeta.cardholder);
@@ -66,6 +67,12 @@ public class tarjetaCred {
         public String toString() {
             // return por String todos los datos de la tarjeta
             return "Numero de tarjeta: " + PAN + " nombre: " + cardholder + " Fecha de vencimiento " +  fechaVencimiento + " marca "+ marca;
-        }   
+        }  
 
+    public double obtenerTasa(LocalDate fecha){
+
+        return 0.0;
+    }
 }
+
+
