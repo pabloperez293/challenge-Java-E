@@ -6,20 +6,35 @@ import java.time.LocalDate;
 
 public class tarjetaCred {
     
+    private String marca;
     private String PAN;
-    private String titular;
-    private String fechaVencimiento;
-    private String tipo;
-    private double saldo;
+    private String cardholder;
+    private LocalDate fechaVencimiento;
 
 
-    public tarjetaCred(String PAN, String titular, LocalDate fechaVencimiento, double saldo , String tipo ){
-        this.titular = titular;
-        this.saldo = saldo;
-        this.fechaVencimiento = fechaVencimiento;
+    public tarjetaCred(String marca, String PAN, LocalDate fechaVencimiento, String cardholder ){
+        // Constructor
+        this.marca = marca;
         this.PAN = PAN;
-        this.tipo = tipo;
+        this.cardholder = cardholder;
+        this.fechaVencimiento = fechaVencimiento;      
     }  
+// Getters
+    public String getMarca() {
+        return marca;
+    }
+
+    public String getPan() {
+        return PAN;
+    }
+
+    public String getCardholder() {
+        return cardholder;
+    }
+
+    public LocalDate getFechaVencimiento() {
+        return fechaVencimiento;
+    }
 
     @Override 
     public boolean equals(Object o) {
@@ -29,17 +44,17 @@ public class tarjetaCred {
         boolean cond3 = false;
         boolean cond4 = false;
 
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
 
          tarjetaCred tarjeta = (tarjetaCred) o;
 
-         cond1 = this.titular.equals(tarjeta.titular);
+        //  comparando
+         cond1 = this.cardholder.equals(tarjeta.cardholder);
          cond2 = this.fechaVencimiento.equals(tarjeta.fechaVencimiento);
          cond3 = this.PAN.equals(tarjeta.PAN); 
+         cond4 = this.marca.equals(tarjeta.marca); 
 
-        if (cond1 && cond2 && cond3 ) {
-     
+
+        if (cond1 && cond2 && cond3 && cond4) {     
             System.out.println("funciona");
             return true;
 
@@ -47,26 +62,13 @@ public class tarjetaCred {
             System.out.println("no funciona");
             return false;
         }
-
-tengo que efectuar un pago
-    
-    // Para obtener la informacion de la tarjet
-    public String obtenerInfoTarjeta() {
-        return "Numero de tarjeta: " + PAN + " nombre: " + titular + " Fecha de vencimiento " +  fechaVencimiento + " saldo "+ saldo;
-    }
-    
-    public boolean distinto(tarjetaCred oTarjetaCred){
-        if ( !this.tipo.equals(oTarjetaCred.tipo)) {
-            return true;
-        }
-
-        if ( !this.PAN.equals(oTarjetaCred.PAN)) {
-            return true;
-        }
-
-        return false;
     }
 
-    // probamos si el metodo funciona correctamente 
-    
+ // Para obtener la informacion de la tarjet
+    @Override
+        public String toString() {
+            // return por String todos los datos de la tarjeta
+            return "Numero de tarjeta: " + PAN + " nombre: " + cardholder + " Fecha de vencimiento " +  fechaVencimiento + " marca "+ marca;
+        }   
+            
 }
